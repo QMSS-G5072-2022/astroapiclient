@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import contractions
 
 # importing build_dataset module
-import build_dataset as bd
+from astroapiclient import build_dataset as bd
 
 # get df of astrological data
 df = bd.df
@@ -25,8 +25,23 @@ df['Key Words'] = [list(compress(df['temp'][i],df['key_words_bool'][i])) for i i
 results = df[['Sun Sign', 'Key Words']].groupby('Sun Sign').sum()
 
 def key_words(sign):
-    '''This function, key_words, takes in a string, the zodiac sign.
-    The return value is the most popular key word used in the horoscopes. (Generates a theme.)'''
+    '''
+    This function finds the most popular word associated with the given zodiac sign over the api's 
+    time period. (Generates a theme.)
+    
+    Parameters:
+    -----------
+        sign: string, the zodiac sign
+
+    Returns:
+    --------
+        The return value is the most popular key word used in the horoscopes.
+
+    Example:
+    --------
+    >>>> key_words(sign='capricorn')
+    'civilized'
+        '''
     assert type(sign) == str, "sign must be a valid zodiac sign"
     all_key_words = results.loc[sign][0]
     return max(all_key_words, key=all_key_words.count)

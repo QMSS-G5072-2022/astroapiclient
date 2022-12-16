@@ -1,4 +1,4 @@
-'''This module contains functions that query the Aztro rapid API developed my Sameer Kumar.
+'''This module contains functions that query the Aztro rapid API developed by Sameer Kumar.
 Each function generates data for each day avaliable (today, yesterday, tomorrow).'''
 
 ## importing necessary libraries
@@ -16,7 +16,32 @@ headers = {
 lst_sun_signs = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius']
 
 def today_data():
-	'''generates today's horoscope data for each zodiac sign'''
+	'''
+	This function generates today's horoscope data for each zodiac sign.
+
+	Parameters:
+	----------
+		none
+
+	Returns:
+	-------
+		A list of response objects that contain today's horoscope information for each zodiac sign.
+
+	Example:
+	--------
+	>>>> today_data()
+	[<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>]
+	'''
 	lst_response = []
 	for sign in lst_sun_signs:
 		querystring = {'sign': sign, 'day':'today'}
@@ -25,7 +50,32 @@ def today_data():
 	return lst_response
 
 def yesterday_data():
-	'''generates yesterday's horoscope data for each zodiac sign'''
+	'''
+	This function generates yesterday's horoscope data for each zodiac sign.
+
+	Parameters:
+	----------
+		none
+
+	Returns:
+	-------
+		A list of response objects that contain yesterday's horoscope information for each zodiac sign.
+
+	Example:
+	--------
+	>>>> yesterday_data()
+	[<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>]
+	'''
 	lst_response = []
 	for sign in lst_sun_signs:
 		querystring = {'sign': sign, 'day':'yesterday'}
@@ -34,7 +84,32 @@ def yesterday_data():
 	return lst_response
 
 def tomorrow_data():
-	'''generates tomorrow's horoscope data for each zodiac sign'''
+	'''
+	This function generates tomorrow's horoscope data for each zodiac sign.
+
+	Parameters:
+	----------
+		none
+
+	Returns:
+	-------
+		A list of response objects that contain tomorrow's horoscope information for each zodiac sign.
+
+	Example:
+	--------
+	>>>> tomorrow_data()
+	[<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>,
+ 	<Response [200]>]
+	'''
 	lst_response = []
 	for sign in lst_sun_signs:
 		querystring = {'sign': sign, 'day':'tomorrow'}
