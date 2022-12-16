@@ -5,6 +5,9 @@ description = "A package based around an astrology api from rapidapi.com!"
 authors = ["Saira Chawla"]
 license = "MIT"
 readme = "README.md"
+documentation = 'https://test.pypi.org/project/astroapiclient/'
+homepage = 'https://github.com/QMSS-G5072-2022/astroapiclient'
+repository = 'https://github.com/QMSS-G5072-2022/astroapiclient'
 
 [tool.poetry.dependencies]
 python = "^3.9"
